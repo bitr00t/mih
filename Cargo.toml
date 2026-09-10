@@ -3,6 +3,7 @@ resolver = "2"
 members = [
     "crates/mih-circuit",
     "crates/mih-core",
+    "crates/mih-sym",
 ]
 
 [workspace.package]

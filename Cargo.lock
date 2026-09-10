@@ -84,6 +84,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "mih-sym"
+version = "0.1.0"
+dependencies = [
+ "hex",
+ "mih-circuit",
+ "mih-core",
+ "rand_chacha",
+ "rand_core",
+ "sha2",
+]
+
+[[package]]
 name = "ppv-lite86"
 version = "0.2.21"
 source = "registry+https://github.com/rust-lang/crates.io-index"
