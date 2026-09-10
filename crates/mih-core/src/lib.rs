@@ -11,8 +11,10 @@
 //! structure is where these schemes actually break.
 
 pub mod transcript;
+pub mod commit;
 
 pub use transcript::{pack_bits, unpack_bits, Transcript};
+pub use commit::{commit, verify, Commitment, Position, COMMITMENT_LEN, OPENING_LEN};
 
 #[cfg(test)]
 mod tests {
