@@ -14,9 +14,11 @@
 
 pub mod gf2;
 pub mod sha256;
+pub mod lowmc;
 
 pub use gf2::BitMatrix;
 pub use sha256::{sha256_block_circuit, BLOCK_BITS, DIGEST_BITS};
+pub use lowmc::{LowMcInstance, LowMcParams, PICNIC_L1, PICNIC_L5};
 
 pub const SHA256_AND_GATES: u32 = 22_296;
 pub const SHA256_AND_DEPTH: u32 = 1_604;
