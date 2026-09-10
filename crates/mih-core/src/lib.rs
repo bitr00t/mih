@@ -13,10 +13,12 @@
 pub mod transcript;
 pub mod commit;
 pub mod prg;
+pub mod codec;
 
 pub use transcript::{pack_bits, unpack_bits, Transcript};
 pub use commit::{commit, verify, Commitment, Position, COMMITMENT_LEN, OPENING_LEN};
 pub use prg::{Prg, Seed, SEED_LEN};
+pub use codec::{CodecError, Decoder, Encoder};
 
 #[cfg(test)]
 mod tests {
@@ -102,5 +104,27 @@ mod tests {
             assert_eq!(packed.len(), (len + 7) / 8);
             assert_eq!(unpack_bits(&packed, len), bits);
         }
+    }
+	
+	#[test]
+    fn a_commitment_survives_an_encode_decode_round_trip() {
+        let mut prg = Prg::from_seed([3; SEED_LEN]);
+        let opening = prg.next_bytes::<OPENING_LEN>();
+        let view = prg.next_bits(1234);
+        let position = Position { repetition: 0, party: 2 };
+
+        let mut enc = Encoder::new();
+        enc.write_bits(&view);
+        let encoded_view = enc.finish();
+        let commitment = commit(&opening, position, &encoded_view);
+
+        let mut dec = Decoder::new(&encoded_view);
+        let decoded = dec.read_bits(4096).unwrap();
+        dec.finish().unwrap();
+        assert_eq!(decoded, view);
+
+        let mut enc = Encoder::new();
+        enc.write_bits(&decoded);
+        assert!(verify(&commitment, &opening, position, &enc.finish()));
     }
 }
