@@ -8,3 +8,7 @@ description = "Phase 0 baseline: naive MPC-in-the-Head proof size model"
 [dependencies]
 mih-circuit.workspace = true
 mih-sym.workspace = true
+
+[[bench]]
+name = "wall"
+harness = false
