@@ -13,15 +13,15 @@ Phase 0 of seven is complete. See [`docs/ROADMAP.md`](docs/ROADMAP.md) for the
 plan and [`docs/CHECKPOINT.md`](docs/CHECKPOINT.md) for what each finished phase
 actually delivered.
 
-| Phase | Contents | State |
-| ----- | -------- | ----- |
-| 0 | Circuit IR, SHA-256 and LowMC as circuits, transcript, commitments, PRG, encoding, baseline size model | done |
-| 1 | ZKBoo: the (2,3)-decomposition, interactive | not started |
-| 2 | ZKB++: Fiat-Shamir, seed trees, size reduction | not started |
-| 3 | KKW: preprocessing model, cut-and-choose | not started |
-| 4 | Picnic-style signature scheme | not started |
-| 5 | Typed frontend: leakage types and a soundness budget | not started |
-| 6 | A modern variant (VOLEitH / TCitH / SDitH), writeup | not started |
+| Phase | Contents                                                                                               | State       |
+| ----- | ------------------------------------------------------------------------------------------------------ | ----------- |
+| 0     | Circuit IR, SHA-256 and LowMC as circuits, transcript, commitments, PRG, encoding, baseline size model | done        |
+| 1     | ZKBoo: the (2,3)-decomposition, interactive                                                            | not started |
+| 2     | ZKB++: Fiat-Shamir, seed trees, size reduction                                                         | not started |
+| 3     | KKW: preprocessing model, cut-and-choose                                                               | not started |
+| 4     | Picnic-style signature scheme                                                                          | not started |
+| 5     | Typed frontend: leakage types and a soundness budget                                                   | not started |
+| 6     | A modern variant (VOLEitH / TCitH / SDitH), writeup                                                    | not started |
 
 ## What MPC-in-the-Head is
 
@@ -100,12 +100,12 @@ of study is written here. See
 [`docs/DESIGN_DECISIONS.md`](docs/DESIGN_DECISIONS.md) for the line and for the
 justification of each dependency.
 
-| Crate | Why |
-| ----- | --- |
-| `sha2` | SHA-256 for the transcript and commitments, and the reference oracle the SHA-256 circuit is tested against |
-| `rand_chacha` | deterministic seed expansion for randomness tapes and instance generation |
-| `rand_core` | the RNG traits those two agree on |
-| `subtle` | constant-time comparison of commitments |
+| Crate           | Why                                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------- |
+| `sha2`        | SHA-256 for the transcript and commitments, and the reference oracle the SHA-256 circuit is tested against |
+| `rand_chacha` | deterministic seed expansion for randomness tapes and instance generation                                  |
+| `rand_core`   | the RNG traits those two agree on                                                                          |
+| `subtle`      | constant-time comparison of commitments                                                                    |
 
 ## References
 
@@ -117,4 +117,4 @@ justification of each dependency.
 
 ## License
 
-MIT or Apache-2.0, at your option.
+MIT
