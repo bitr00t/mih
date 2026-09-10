@@ -1,0 +1,8 @@
+[package]
+name = "mih-circuit"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Boolean circuit IR, builder and evaluator for MPC-in-the-Head"
+
+[dependencies]

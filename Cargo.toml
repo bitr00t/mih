@@ -1,0 +1,24 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/mih-circuit",
+    "crates/mih-core",
+    "crates/mih-sym",
+    "crates/mih-wall",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/bitr00t/mih"
+
+[workspace.dependencies]
+mih-circuit = { path = "crates/mih-circuit" }
+mih-core = { path = "crates/mih-core" }
+mih-sym = { path = "crates/mih-sym" }
+sha2 = "0.10.8"
+rand_core = "0.6.4"
+rand_chacha = "0.3.1"
+subtle = "2.5.0"
+hex = "0.4.3"
