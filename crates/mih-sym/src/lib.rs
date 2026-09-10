@@ -13,5 +13,10 @@
 //! circuit nobody chose to be convenient and against one that was.
 
 pub mod gf2;
+pub mod sha256;
 
 pub use gf2::BitMatrix;
+pub use sha256::{sha256_block_circuit, BLOCK_BITS, DIGEST_BITS};
+
+pub const SHA256_AND_GATES: u32 = 22_296;
+pub const SHA256_AND_DEPTH: u32 = 1_604;
