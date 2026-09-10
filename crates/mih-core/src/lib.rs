@@ -12,9 +12,11 @@
 
 pub mod transcript;
 pub mod commit;
+pub mod prg;
 
 pub use transcript::{pack_bits, unpack_bits, Transcript};
 pub use commit::{commit, verify, Commitment, Position, COMMITMENT_LEN, OPENING_LEN};
+pub use prg::{Prg, Seed, SEED_LEN};
 
 #[cfg(test)]
 mod tests {
