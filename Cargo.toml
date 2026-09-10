@@ -4,6 +4,7 @@ members = [
     "crates/mih-circuit",
     "crates/mih-core",
     "crates/mih-sym",
+    "crates/mih-wall",
 ]
 
 [workspace.package]
